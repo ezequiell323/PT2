@@ -22,6 +22,27 @@
         <h2>Sign Up Form</h2>
         <form class="signup">
           <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName-input" placeholder="John">
+          </div>
+          <div class="form-group">
+          <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName-input" placeholder="Doe">
+          </div>
+          <div class="form-group">
+          <label for="telephone">Telephone Number</label>
+            <input type="tel" class="form-control" id="telephone-input" placeholder="(954) 850-8040" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <small>Format: 111-222-3333</small>
+          </div>
+          <div class="form-group">
+              <label for="inputRole">Role</label>
+              <select id="role-select" class="form-control">
+                <option selected>Staff</option>
+                <option>Manager</option>
+                <option>Human Resources</option>
+              </select>
+            </div>
+            <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="email-input" placeholder="Email">
           </div>
