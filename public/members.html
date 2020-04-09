@@ -23,6 +23,39 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Welcome <span class="member-name"></span></h2>
+        <div id="statusEntry">
+          <form  id="form1" class="p-3">  
+            <div class="form-group">
+              <label for="seeAnotherField">Today's Work Status</label>
+              <select class="form-control" id="seeAnotherField">
+                    <option value="no">In the Office</option>
+                    <option value="no">Working from Home</option>
+                    <option value="yes">Out of Office</option>
+              </select>
+            </div>
+            
+            <div class="form-group" id="otherFieldDiv">
+              <label for="otherField">Reason</label>
+              <select class="form-control" id="otherField">
+                <option>Quarantine</option>
+                <option>Caring for Family Member</option>
+                <option>Child School/Care Closed</option>
+                <option>Other</option>
+              </select>
+            </div>
+            
+            
+            <div class="form-group">
+              <label for="comments">Comments</label>
+              <textarea class="form-control" id="comments" rows="3"></textarea>
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div id="savedStatuses">
+
+        </div>
+          
       </div>
     </div>
   </div>
