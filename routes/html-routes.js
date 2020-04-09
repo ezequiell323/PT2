@@ -43,8 +43,14 @@ module.exports = function(app) {
 
   app.get("/covid", function (req, res) {
     covidModel.all(function (data) {
-      let hbsObject = data;
+      let hbsObject = { card: [{ cardName: "Confirmed",
+                number: data.confirmed,
+                lastUpdate: data.lastUpdate,
+                text: "Number of total cases of COVID-19",
+                color: "bg-info"}] };
+                
       console.log(hbsObject);
+
       res.render("index", hbsObject);
     })
   })
