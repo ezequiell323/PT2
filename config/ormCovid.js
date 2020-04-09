@@ -24,12 +24,15 @@ var orm = {
         lastUpdate: res.data.lastUpdate
       });
     });
-  }
+  },
+  // countries: function(cb) {
+  //   axios.get(covidConn).then((res) => {
+
+  //   cb(res);
+  //   });
+  // }
 };
 
-orm.country("usa", data => {
-  console.log(data);
-});
 
 // Export the orm object for the model (cat.js).
 module.exports = orm;
