@@ -10,99 +10,61 @@
 
 
 
-
     <title>Index</title>
   </head>
   <body>
-
-    <div class="wrapper fadeInDown">
-       
-            <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <h3>Welcome:Marcos</h3>
-                    <hr class="my-4">
-                   </div>
-                </div>
-                <div class="card">
-                  <div class="card-header">
-                    Work Status
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                          <h6>Offce</h6>
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                         <h6>Home</h6> 
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                          <h6>Out of the Office</h6>
-                        </label>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-sm-10">
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                      </div>
-                      </blockquote>
-                  </div>
-                </div>
-                <br>
-                <br>
-                <div class="card">
-                  <div class="card-header ">
-                    Company Updates 
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Everyone should be checking their email regularly for Updates on Covid-19 related issues and process changes.</p>
-                      <footer class="blockquote-footer">Tim</footer>
-                    </blockquote>
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Good morning Team, First of all I hope everyone is staying healthy and safe. 
-                        We have a few things that need to be communicated and due to lack of meetings 
-                        and overall communication I am sending this email and others will follow as necessary.</p>
-                      <footer class="blockquote-footer">Kryshtene </footer>
-                    </blockquote>
-                  </div>
-                </div>
-                <BR>
-                <BR>
-                <div class="card">
-                  <div class="card-header">
-                    HR NOTE
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>As CDC guidance evolves, we’ll follow it. Recently, they released new guidance on voluntary 
-                        use of non-medical grade cloth face coverings in situations where social distancing is difficult 
-                        to maintain.</p>
-                     
-                    </blockquote>
-                  </div>
-                </div>
-              
-              
-              
-            </div>
-        
-      
-         
-          
-      
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/logout">
+            Logout
+          </a>
         </div>
       </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>Welcome <span class="member-name"></span></h2>
+          <div id="statusEntry">
+            <form  id="form1" class="p-3">  
+              <div class="form-group">
+                <label for="seeAnotherField">Today's Work Status</label>
+                <select class="form-control" id="seeAnotherField">
+                      <option value="no">In the Office</option>
+                      <option value="no">Working from Home</option>
+                      <option value="yes">Out of Office</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="otherFieldDiv">
+                <label for="otherField">Reason</label>
+                <select class="form-control" id="otherField">
+                  <option>Quarantine</option>
+                  <option>Caring for Family Member</option>
+                  <option>Child School/Care Closed</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+
+              <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea class="form-control" id="comments" rows="3"></textarea>
+              </div>
+              <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div id="savedStatuses">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  
     
     
     
