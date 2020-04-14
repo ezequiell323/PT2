@@ -4,16 +4,14 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
         },
-        date: {
+        reason: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
-        q1: DataTypes.STRING,
-        q2: DataTypes.STRING,
-        q3: DataTypes.STRING,
-        q4: DataTypes.STRING,
-        q5: DataTypes.STRING,
-        q6: DataTypes.STRING
+        comments: {
+            type: DataTypes.STRING,
+            allowNull: true
+        }
     });
     Status.associate = function(models) {
         // Associating Author with Posts
