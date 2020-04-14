@@ -31,7 +31,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  // API added here
+  // Covid API added here
   app.get("/covid/:country", function (req, res) {
 
     covidModel.country(req.params.country, function (data) {
@@ -44,42 +44,39 @@ module.exports = function(app) {
   app.get("/covid", function (req, res) {
     covidModel.all(function (data) {
       let hbsObject = loadHbsObject(data);
-                
-      //console.log(hbsObject);
-
       res.render("index", hbsObject);
     });
   });
 
-  app.get("/covid/chart", function (req, res) {
-    
-    covidModel.daily(function (days) {
-
-      return days;
-
-    });
-  });
-
   const loadHbsObject = (data) => {
+    let country = "ALL";
+    if (data.country)
+      country = data.country;
+
     return { card: [{ 
-      cardName: "Confirmed",
-      number: data.confirmed,
-      lastUpdate: data.lastUpdate,
-      text: "Number of total cases",
-      color: "bg-info"
-    }, {
-      cardName: "Recovered",
-      number: data.recovered,
-      lastUpdate: data.lastUpdate,
-      text: "Number of recoveries",
-      color: "bg-success"
-    }, {
-      cardName: "Deaths",
-      number: data.deaths,
-      lastUpdate: data.lastUpdate,
-      text: "Number of deaths",
-      color: "bg-danger"
-    }] };
+        cardName: "Confirmed",
+        number: data.confirmed,
+        lastUpdate: data.lastUpdate,
+        text: "Number of total cases",
+        color: "bg-info"
+      }, {
+        cardName: "Recovered",
+        number: data.recovered,
+        lastUpdate: data.lastUpdate,
+        text: "Number of recoveries",
+        color: "bg-success"
+      }, {
+        cardName: "Deaths",
+        number: data.deaths,
+        lastUpdate: data.lastUpdate,
+        text: "Number of deaths",
+        color: "bg-danger"
+      }],
+      country: country.toUpperCase(),
+      infected: data.confirmed - data.recovered - data.deaths,
+      recovered: data.recovered,
+      dead: data.deaths
+   };
   }
 
 };

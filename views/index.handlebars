@@ -9,11 +9,105 @@
 </div>
 </div>
 
+<label for="countriesDD">Choose a country:</label>
+
+<div id="country" hidden>{{ country }}</div>
+<div id="infected" hidden>{{ infected }}</div>
+<div id="recovered" hidden>{{ recovered }}</div>
+<div id="dead" hidden>{{ dead }}</div>
+
+<select id="countriesDD">
+</select>
+<script>
+  let countriesURL = "https://covid19.mathdro.id/api/countries";
+  $.ajax({url: countriesURL, method: "GET"}).then(response => {
+    let html = `<option value=""`;
+    let countrySelected = $(`#country`).html();
+    if (countrySelected == "ALL")
+      html += ` selected="selected"`;
+    html += `>ALL</option>`;
+
+    response.countries.forEach(country => {
+      html += `<option value="${country.iso3}"`;
+      if (countrySelected == country.iso3)
+        html += ` selected="selected"`;
+      html += `>${country.name}</option>`;
+    });
+
+    $(`#countriesDD`).html(html);
+  });
+
+  $(`#countriesDD`).change(() => {
+    console.log($(`#countriesDD`).val());
+  });
+</script>
 
 
+<br>
+<canvas id="myChart"></canvas>
+<script src="/js/Chart.min.js"></script>
+<script>
+  let ctx = document.getElementById('myChart');
 
-  {{> covid/country-picker-block }}
+  if ($(`#country`).html() == `ALL`) {
+    let dailyURL = "https://covid19.mathdro.id/api/daily";
+    $.ajax({url: dailyURL, method: "GET"}).then(response => {
 
+      let data = {
+        labels: [],
+        datasets: [{
+          label: "Confirmed",
+          data: [],
+          backgroundColor: 'rgba(23, 162, 184, 0.2)',
+          borderColor: 'rgba(23, 162, 184, 1)',
+          borderWidth: 1
+        }, {
+          {{!-- label: "Recovered",
+          data: [],
+          backgroundColor: 'rgba(40, 167, 69, 0.2)',
+          borderColor: 'rgba(40, 167, 69, 1)',
+          borderWidth: 1
+        }, { --}}
+          label: "Deaths",
+          data: [],
+          backgroundColor: 'rgba(220, 53, 69, 0.2)',
+          borderColor: 'rgba(220, 53, 69, 1)',
+          borderWidth: 1
+        }]
+      };
 
-<h2>Cases Worldwide</h2>
-  {{> covid/chart-block }}
+      response.forEach(day => {
+        data.labels.push(day.reportDate);
+        data.datasets[0].data.push(day.confirmed.total);
+        {{!-- data.datasets[1].data.push(day.recovered.total); --}}
+        data.datasets[1].data.push(day.deaths.total);
+      });
+
+      let myChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+            
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    });
+  } else {
+    let myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Infected', 'Recovered', 'Dead'],
+          datasets: [{
+            data: [$(`#infected`).html(), $(`#recovered`).html(), $(`#dead`).html()],
+            backgroundColor: ['rgba(23, 162, 184, 1)', 'rgba(40, 167, 69, 1)', 'rgba(220, 53, 69, 1)']
+          }]
+        }
+      });
+  }
+</script>
