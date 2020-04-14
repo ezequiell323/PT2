@@ -1,16 +1,14 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <title>Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="stylesheets/style.css" rel="stylesheet">
-
-
-
-    <title>Index</title>
+    
   </head>
   <body>
      <div class="wrapper fadeInDown">
@@ -20,37 +18,48 @@
             <h2>Welcome <span class="member-name"></span></h2> 
             <hr class="my-4"> 
           <div id="statusEntry">
-            <form  id="form1" class="p-3">  
+            <form class="status">  
               <div class="form-group">
-                <label for="seeAnotherField">Today's Work Status</label>
-                <select class="form-control" id="seeAnotherField">
-                      <option value="no">In the Office</option>
-                      <option value="no">Working from Home</option>
-                      <option value="yes">Out of Office</option>
+                <label for="statusOption">Today's Work Status</label>
+                <select class="form-control" id="statusOption">
+                      <option value="In the Office">In the Office</option>
+                      <option value="Working from Home">Working from Home</option>
+                      <option value="Out of Office">Out of Office</option>
                 </select>
               </div>
-              <div class="form-group" id="otherFieldDiv">
+              <div class="form-group" id="reasonDiv">
+                <label for="reason">Reason</label>
+                <select class="form-control" id="reasonOption">
+                  <option value="Quarantine">Quarantine</option>
+                  <option value="Caring for Family Member">Caring for Family Member</option>
+                  <option value ="Child School/Care Closed">Child School/Care Closed</option>
+                  <option value ="Other">Other</option>
+<!--               <div class="form-group" id="otherFieldDiv">
                 <label for="otherField">Reason</label>
                 <select class="form-control" id="otherField">
                   <option>Quarantine</option>
                   <option>Caring for Family Member</option>
                   <option>Child School/Care Closed</option>
-                  <option>Other</option>
+                  <option>Other</option> -->
+                  
                 </select>
               </div>
               <div class="form-group">
                 <label for="comments">Comments</label>
-                <textarea class="form-control" id="comments" rows="3"></textarea>
+                <input type="text" class="form-control" id="comments-input">
               </div>
-                <div>
+              <input type="submit" class="fadeIn fourth btn btn-primary" value="submit">
+            </form>
+          </div>
+<!--                 <div>
               <input type="button" class="fadeIn fourth" value="Submit" />
               </form>
-                </div>
+                </div> -->
           <div id="savedStatuses">
           </div>
-        </div>
-      </div>
-  
+          <div id="employeeStatuses">
+            
+          </div>
 
         <div class="row">
           <div class="col">
@@ -96,24 +105,12 @@
     </div>
 </div>
 
-
-       
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/members.js"></script>
   </body>
 </html>
 
