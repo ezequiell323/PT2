@@ -12,4 +12,8 @@
 
         $(`#countriesDD`).html(html);
     });
+
+    $(`#countriesDD`).change(() => {
+        console.log($(`#countriesDD`).val());
+    });
 </script>

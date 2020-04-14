@@ -22,31 +22,11 @@ let orm = {
         confirmed: res.data.confirmed.value,
         recovered: res.data.recovered.value,
         deaths: res.data.deaths.value,
-        lastUpdate: res.data.lastUpdate
+        lastUpdate: res.data.lastUpdate,
+        country: country
       });
     });
-  // },
-  // daily: function(cb) {
-  //   axios.get(covidConn+"/daily").then((res) => {
-  //     let days = [];
-  //     res.forEach(day => {
-  //       days.push({
-  //         confirmed: day.confirmed.total,
-  //         deaths: day.deaths.total,
-  //         recovered: day.recovered.total,
-  //         date: day.reportDate
-  //       });
-  //     });
-
-  //     cb(days);
-  //   });
   }
-  // countries: function(cb) {
-  //   axios.get(covidConn).then((res) => {
-
-  //   cb(res);
-  //   });
-  // }
 };
 
 
