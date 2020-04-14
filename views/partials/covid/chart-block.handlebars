@@ -1,7 +1,7 @@
 <canvas id="myChart"></canvas>
 <script src="/js/Chart.min.js"></script>
 <script>
-var ctx = document.getElementById('myChart');
+let ctx = document.getElementById('myChart');
 
 let dailyURL = "https://covid19.mathdro.id/api/daily";
 $.ajax({url: dailyURL, method: "GET"}).then(response => {
@@ -36,7 +36,7 @@ $.ajax({url: dailyURL, method: "GET"}).then(response => {
         data.datasets[1].data.push(day.deaths.total);
     });
 
-    var myChart = new Chart(ctx, {
+    let myChart = new Chart(ctx, {
         type: 'line',
         data: data,
         options: {

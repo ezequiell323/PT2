@@ -4,9 +4,6 @@ var path = require("path");
 // Requiring covid API controller
 const covidModel = require("../emergencyModels/covidModels");
 
-// Requiring chart to... you know... make a chart, or something
-//require("chart");
-
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 

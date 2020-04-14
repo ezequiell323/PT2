@@ -3,7 +3,7 @@ const axios = require('axios');
 let covidConn = "https://covid19.mathdro.id/api";
 
 // Object for all our SQL statement functions.
-var orm = {
+let orm = {
   all: function(cb) {
     Promise.all([axios.get(covidConn),axios.get(covidConn + "/daily")])
     
