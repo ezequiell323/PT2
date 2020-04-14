@@ -9,6 +9,9 @@ var covid = {
   },
   country: function(country, cb) {
     orm.country(country, cb);
+  },
+  daily: function(cb) {
+    orm.daily(cb);
   }
 };
 

@@ -1,0 +1,54 @@
+<canvas id="myChart"></canvas>
+<script src="/js/Chart.min.js"></script>
+<script>
+let ctx = document.getElementById('myChart');
+
+let dailyURL = "https://covid19.mathdro.id/api/daily";
+$.ajax({url: dailyURL, method: "GET"}).then(response => {
+
+    let data = {
+        labels: [],
+        datasets: [{
+            label: "Confirmed",
+            data: [],
+            backgroundColor: 'rgba(23, 162, 184, 0.2)',
+            borderColor: 'rgba(23, 162, 184, 1)',
+            borderWidth: 1
+        }, {
+            {{!-- label: "Recovered",
+            data: [],
+            backgroundColor: 'rgba(40, 167, 69, 0.2)',
+            borderColor: 'rgba(40, 167, 69, 1)',
+            borderWidth: 1
+        }, { --}}
+            label: "Deaths",
+            data: [],
+            backgroundColor: 'rgba(220, 53, 69, 0.2)',
+            borderColor: 'rgba(220, 53, 69, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    response.forEach(day => {
+        data.labels.push(day.reportDate);
+        data.datasets[0].data.push(day.confirmed.total);
+        {{!-- data.datasets[1].data.push(day.recovered.total); --}}
+        data.datasets[1].data.push(day.deaths.total);
+    });
+
+    let myChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+            
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+});
+</script>

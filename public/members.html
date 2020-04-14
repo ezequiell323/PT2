@@ -11,19 +11,12 @@
     
   </head>
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/logout">
-            Logout
-          </a>
-        </div>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h2>Welcome <span class="member-name"></span></h2>
+     <div class="wrapper fadeInDown">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h2>Welcome <span class="member-name"></span></h2> 
+            <hr class="my-4"> 
           <div id="statusEntry">
             <form class="status">  
               <div class="form-group">
@@ -41,6 +34,14 @@
                   <option value="Caring for Family Member">Caring for Family Member</option>
                   <option value ="Child School/Care Closed">Child School/Care Closed</option>
                   <option value ="Other">Other</option>
+<!--               <div class="form-group" id="otherFieldDiv">
+                <label for="otherField">Reason</label>
+                <select class="form-control" id="otherField">
+                  <option>Quarantine</option>
+                  <option>Caring for Family Member</option>
+                  <option>Child School/Care Closed</option>
+                  <option>Other</option> -->
+                  
                 </select>
               </div>
               <div class="form-group">
@@ -50,16 +51,59 @@
               <input type="submit" class="fadeIn fourth btn btn-primary" value="submit">
             </form>
           </div>
+<!--                 <div>
+              <input type="button" class="fadeIn fourth" value="Submit" />
+              </form>
+                </div> -->
           <div id="savedStatuses">
-
           </div>
           <div id="employeeStatuses">
             
           </div>
 
+        <div class="row">
+          <div class="col">
+        
+        <div class="card">
+          <div class="card-header ">
+            Company Updates 
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Everyone should be checking their email regularly for Updates on Covid-19 related issues and process changes.</p>
+              <footer class="blockquote-footer">Tim</footer>
+            </blockquote>
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Good morning Team, First of all I hope everyone is staying healthy and safe. 
+                We have a few things that need to be communicated and due to lack of meetings 
+                and overall communication I am sending this email and others will follow as necessary.</p>
+              <footer class="blockquote-footer">Kryshtene </footer>
+            </blockquote>
+          </div>
         </div>
+        <BR>
+        <BR>
+        <div class="card">
+          <div class="card-header">
+            HR NOTE
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>As CDC guidance evolves, we’ll follow it. Recently, they released new guidance on voluntary 
+                use of non-medical grade cloth face coverings in situations where social distancing is difficult 
+                to maintain.</p>
+             
+            </blockquote>
+          </div>
+        </div>
+        <a href="login.html">
+          <input type="button" class="fadeIn fourth" value="Log Out" />
+       </a>
       </div>
     </div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
