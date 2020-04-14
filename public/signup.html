@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 ">
-          <h2>Sign Up Form</h2>
+          <h2 class="register-heading">Sign Up Form</h2>
           <form class="signup">
             <div class="form-group">
               <label for="firstName">First Name</label>
@@ -27,13 +27,14 @@
             </div>
             <div class="form-group">
             <label for="telephone">Telephone Number</label>
-              <input type="tel" class="form-control" id="telephone-input" placeholder="(954) 850-8040" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+              <input type="tel" class="form-control" id="telephone-input" placeholder="954-850-8040" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
               <small>Format: 111-222-3333</small>
             </div>
             <div class="form-group">
                 <label for="inputRole">Role</label>
                 <select id="role-select" class="form-control">
-                  <option selected>Staff</option>
+                  <option selected>...</option>
+                  <option>Staff</option>
                   <option>Manager</option>
                   <option>Human Resources</option>
                 </select>
