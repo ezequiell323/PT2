@@ -1,0 +1,15 @@
+<label for="countriesDD">Choose a country:</label>
+
+<select id="countriesDD">
+</select>
+<script>
+    let countriesURL = "https://covid19.mathdro.id/api/countries";
+    $.ajax({url: countriesURL, method: "GET"}).then(response => {
+        let html = `<option value="" selected="selected">ALL</option>`;
+        response.countries.forEach(country => {
+            html += `<option value="${country.iso3}">${country.name}</option>`;
+        });
+
+        $(`#countriesDD`).html(html);
+    });
+</script>
