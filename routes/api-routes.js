@@ -56,4 +56,17 @@ module.exports = function(app) {
       });
     }
   });
+  app.post("/api/status", function(req, res) {
+    console.log(req.body);
+    db.Status.create({
+      status: req.body.status,
+      reason: req.body.reason,
+      comments: req.body.comments,
+      UserId:  req.user.id
+    })
+      .catch(function(err) {
+        console.log(err);
+        res.status(401).json(err);
+      });
+  });
 };
