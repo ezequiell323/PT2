@@ -16,7 +16,7 @@
      <div class="wrapper fadeInDown">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-md-offset-3">
+          <div class="col-md-12 ">
             <h2>Welcome <span class="member-name"></span></h2> 
             <hr class="my-4"> 
           <div id="statusEntry">
@@ -29,31 +29,42 @@
                       <option value="yes">Out of Office</option>
                 </select>
               </div>
-              <div class="form-group" id="otherFieldDiv">
+              <div class="form-group" id="reasonDiv">
+                <label for="reason">Reason</label>
+                <select class="form-control" id="reasonOption">
+                  <option value="Quarantine">Quarantine</option>
+                  <option value="Caring for Family Member">Caring for Family Member</option>
+                  <option value ="Child School/Care Closed">Child School/Care Closed</option>
+                  <option value ="Other">Other</option>
+<!--               <div class="form-group" id="otherFieldDiv">
                 <label for="otherField">Reason</label>
                 <select class="form-control" id="otherField">
                   <option>Quarantine</option>
                   <option>Caring for Family Member</option>
                   <option>Child School/Care Closed</option>
-                  <option>Other</option>
+                  <option>Other</option> -->
+                  
                 </select>
               </div>
               <div class="form-group">
                 <label for="comments">Comments</label>
                 <textarea class="form-control" id="comments" rows="3"></textarea>
               </div>
-                <div>
+              <input type="submit" class="fadeIn fourth btn btn-primary" value="submit">
+            </form>
+          </div>
+<!--                 <div>
               <input type="button" class="fadeIn fourth" value="Submit" />
               </form>
-                </div>
+                </div> -->
           <div id="savedStatuses">
           </div>
-        </div>
-      </div>
-  
+          <div id="employeeStatuses">
+            
+          </div>
 
         <div class="row">
-          <div class="col">
+          <div class="col-md-12">
         
         <div class="card">
           <div class="card-header ">
@@ -96,19 +107,6 @@
     </div>
 </div>
 
-
-       
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
