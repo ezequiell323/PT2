@@ -42,7 +42,6 @@ module.exports = function(app) {
 
     covidModel.country(req.params.country, function (data) {
       let hbsObject = loadHbsObject(data);
-      console.log(hbsObject);
       res.render("index", hbsObject);
     });
   });
