@@ -39,7 +39,6 @@ module.exports = function(app) {
 
   // Covid API added here
   app.get("/covid/:country", function (req, res) {
-
     covidModel.country(req.params.country, function (data) {
       let hbsObject = loadHbsObject(data);
       res.render("index", hbsObject);

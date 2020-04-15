@@ -35,15 +35,7 @@
                   <option value="Quarantine">Quarantine</option>
                   <option value="Caring for Family Member">Caring for Family Member</option>
                   <option value ="Child School/Care Closed">Child School/Care Closed</option>
-                  <option value ="Other">Other</option>
-<!--               <div class="form-group" id="otherFieldDiv">
-                <label for="otherField">Reason</label>
-                <select class="form-control" id="otherField">
-                  <option>Quarantine</option>
-                  <option>Caring for Family Member</option>
-                  <option>Child School/Care Closed</option>
-                  <option>Other</option> -->
-                  
+                  <option value ="Other">Other</option>                  
                 </select>
               </div>
               <div class="form-group">
@@ -54,10 +46,6 @@
               <input type="submit" class="fadeIn fourth btn btn-primary" value="Management" a href="management.html">
             </form>
           </div>
-<!--                 <div>
-              <input type="button" class="fadeIn fourth" value="Submit" />
-              </form>
-                </div> -->
           <div id="savedStatuses">
           </div>
           <div id="employeeStatuses">
@@ -97,7 +85,7 @@
               <p>As CDC guidance evolves, we’ll follow it. Recently, they released new guidance on voluntary 
                 use of non-medical grade cloth face coverings in situations where social distancing is difficult 
                 to maintain.</p>
-                <a id="covid-tracker" href="http://localhost:8080/covid">
+                <a id="covid-tracker" target="_blank">
                   <input type="button" class="fadeIn fourth" value="Covid Tracker" />
                </a>
              
@@ -112,13 +100,14 @@
 </div>
 
     <!-- Optional JavaScript -->
-    <script>
-      $(`#covid-tracker`).attr(`href`, `${window.location.href.split("members")[0]}covid`);
-    </script>
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
+  <script>
+    $(`#covid-tracker`).attr(`href`, `${window.location.href.split("members")[0]}covid`);
+  </script>
 </html>
 
