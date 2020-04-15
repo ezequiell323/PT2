@@ -38,7 +38,13 @@
   });
 
   $(`#countriesDD`).change(() => {
-    console.log($(`#countriesDD`).val());
+    let location = window.location.href.split("covid")[0];
+    if ($(`#countriesDD`).val() == "ALL")
+    {
+      window.location = `${location}covid`;
+    } else {
+      window.location = `${location}covid/${$('#countriesDD').val()}`;
+    }
   });
 </script>
 
@@ -107,7 +113,10 @@
             data: [$(`#infected`).html(), $(`#recovered`).html(), $(`#dead`).html()],
             backgroundColor: ['rgba(23, 162, 184, 1)', 'rgba(40, 167, 69, 1)', 'rgba(220, 53, 69, 1)']
           }]
-        }
+        },
+        {{!-- options: {
+          responsiveAnimationDuration: 500;
+        } --}}
       });
   }
 </script>
